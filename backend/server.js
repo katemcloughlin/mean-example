@@ -12,7 +12,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('');
+mongoose.connect('mongodb://localhost:27017/issues');
 
 const connection = mongoose.connection;
 
@@ -43,11 +43,11 @@ router.route('/issues/add').post((req, res) => {
     issue.save()
         .then(issue => {
             res.status(200).json({'issue': 'Added successfully'});
-        });
+        })
         .catch(err => {
             res.status(400).send('Failed to create new record');
         });
-}):
+});
 
 router.route('/issues/update/:id').post((req, res) => {
     Issue.findById(req.params.id, (err, issue) => {
