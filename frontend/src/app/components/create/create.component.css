@@ -1,0 +1,10 @@
+.create-form {
+    width:500px;
+    margin:0 auto;
+    border:solid 1px #e4e4e4;
+    padding:20px;
+}
+
+.field-full-width {
+    display:block;
+}
